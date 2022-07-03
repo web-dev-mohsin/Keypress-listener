@@ -4,12 +4,17 @@ for(var i=0; i<3; i++){
     document.querySelectorAll(".myDiv")[i].addEventListener("click", function(){
         var text = this.innerHTML; 
         audioPlay(text);
-        AddAnimations(text);
-        
-         
-    });
-   
+        AddAnimations(text); 
+    }); 
 }
+
+document.addEventListener("keypress",function(event){
+    var text = event.key;
+    audioPlay(text);
+    AddAnimations(text);
+
+})
+
 
 function audioPlay(text){
      
@@ -31,6 +36,7 @@ function audioPlay(text){
     }
 }
 
+
 function AddAnimations(text){
    var Button = document.querySelector("."+text);
    Button.classList.add("anim");
@@ -39,4 +45,5 @@ function AddAnimations(text){
         Button.classList.remove("anim");
    }, 1000)
 }
+
  
